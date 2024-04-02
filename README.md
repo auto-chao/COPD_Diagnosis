@@ -1,27 +1,26 @@
 # README
 
-### 代码使用环境
+## Code Execution Environment
 
-Windows/Linux + Shell
+Compatible with Windows/Linux + Shell.
 
-### 使用步骤：
+## Setup Instructions:
 
-1. 从https://zenodo.org/records/10209837 下载CC数据集，将Healthy和COPD两个数据集放在`data/raw_data`下
+1. **Download the CC Dataset:** Navigate to [https://zenodo.org/records/10209837](https://zenodo.org/records/10209837) and download the CC dataset. Place the Healthy and COPD datasets under `data/raw_data`.
 
-2. 安装所用的python环境：
+2. **Install Python Environment:** Setup the Python environment required for the project by executing the following command:
 
-   ```shell
-   pip install -r requirement.txt
-   ```
+    ```shell
+    pip install -r requirements.txt
+    ```
 
-3. 运行run.sh：
+3. **Execute Script:** Run the `run.sh` script to start the process:
 
-   ```shell
-   cd ..
-   sh run.sh
-   ```
+    ```shell
+    cd ..
+    sh run.sh
+    ```
 
-### 相关说明
+## Notes
 
-1. 运行结果：存储在`./log`和`./saved`文件夹中
-
+- **Execution Results:** The results of the execution are stored in the `./log` and `./saved` directories.
