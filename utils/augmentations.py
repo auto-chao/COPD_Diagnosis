@@ -13,18 +13,18 @@ class Augmentation():
         method_list = [self.volume_augment, self.time_stretch, self.time_shift, self.n_mfcc_shift,  self.jitter]
         input_list = [self.sound]
         output_list = []
-        for method in method_list:
+        for i in range(len(method_list)):
             for input in input_list:
-                if method == self.volume_augment:
-                    add = method(input)
+                if method_list[i] == self.volume_augment:
+                    add = method_list[i](input)
                     no_add = self.mfcc
                 else:
-                    add = method(input)
+                    add = method_list[i](input)
                     no_add = input
                 output_list.extend([add, no_add])
             input_list.clear()
             input_list = output_list.copy()
-            if method != self.jitter:
+            if i != len(method_list) - 1:
                 output_list.clear()
         return output_list
         

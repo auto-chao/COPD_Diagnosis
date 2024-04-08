@@ -11,7 +11,8 @@ import sys
 sys.path.append("..")
 from utils import augmentations
 from utils import log, data_generator_cls, show
-
+import warnings
+warnings.filterwarnings("ignore")
 def setup_seed(seed):
      torch.manual_seed(seed)
      torch.cuda.manual_seed_all(seed)
@@ -51,20 +52,6 @@ def process():
     set_data_list(0, 0, healthy_human_count* 4//5,  healthy_path_list, mfccs, train_labels)    
     # save as train.pt
     save_pt("./processed_data/train.pt", mfccs, train_labels)
-    
-    # train-copd
-    set_data_list(1, 0, copd_human_count * 4//5,  copd_path_list, mfccs, train_labels, "raw")
-    # train-healthy
-    set_data_list(0, 0, healthy_human_count* 4//5,  healthy_path_list, mfccs, train_labels, "raw")    
-    # save as train.pt
-    save_pt("./processed_data/train_cls.pt", mfccs, train_labels)
-
-    # valid-copd
-    set_data_list(1, copd_human_count * 4//5, copd_human_count, copd_path_list, mfccs, train_labels)
-    # valid-healthy
-    set_data_list(0, healthy_human_count * 4//5, healthy_human_count, healthy_path_list, mfccs, train_labels)
-    # save as valid.pt
-    save_pt("./processed_data/valid.pt", mfccs, train_labels)
 
     # test-copd
     set_data_list(1, copd_human_count * 4//5, copd_human_count, copd_path_list, mfccs, train_labels, "raw")
