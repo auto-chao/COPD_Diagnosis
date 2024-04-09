@@ -25,7 +25,7 @@ parser.add_argument('--num_workers', default=0, type=int, help='number of data l
 parser.add_argument('--epochs', default=100, type=int, help='the number of training epochs')
 parser.add_argument('--batch_size', default=32, type=int, help='total batchsize of all GPUs or single GPU')
 parser.add_argument('--learning_rate', default=1e-6, type=float, help='the initial learning rate of optimizer')
-parser.add_argument('--cls_learning_rate', default=1e-7, type=float, help='the selected lr of pretext task')
+parser.add_argument('--cls_learning_rate', default=1e-6, type=float, help='the selected lr of pretext task')
 parser.add_argument('--pre_slc_learning_rate', default=1e-6, type=float, help='the selected lr of pretext task')
 parser.add_argument('--display_step', default=1, type=int, help="How many steps to print once")
 parser.add_argument('--multiprocessing', action='store_true', help='whether to choose multiprocessing')
